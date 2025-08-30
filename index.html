@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Add numbers!</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <script defer src="vue.global.js"></script>
+  <script defer src="index.js"></script>
+</head>
+
+<body>
+  <main id="vue">
+    <h1>Add numbers!</h1>
+
+    <p>This tool lets you add two numbers from 1 to 100.</p>
+
+    <label>
+      <p>
+        <input v-model="liveMode" type="checkbox" name="live mode">
+        Enable live updates
+      </p>
+    </label>
+
+    <form ref="form" @submit.prevent="handleFormSubmit">
+
+      <label>
+        First number:
+        <input v-model="first" type="number" name="first" required min="1" max="100" @input="handleInputChange">
+
+        <span v-cloak v-if="errors['first']">{{errors['first']}}</span>
+      </label>
+
+      <label>
+        Second number:
+        <input v-model="second" type="number" name="second" required min="1" max="100" @input="handleInputChange">
+
+        <span v-cloak v-if="errors['second']">{{errors['second']}}</span>
+      </label>
+
+      <input :disabled="liveMode" type="submit" value="Add the numbers!">
+
+      <output v-cloak>{{output}}</output>
+    </form>
+  </main>
+</body>
+
+</html>

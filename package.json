@@ -1,0 +1,16 @@
+{
+  "name": "jrpc-client",
+  "version": "1.0.0",
+  "description": "Interview project for MVTec",
+  "author": "Maxi Ertl",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.34.0",
+    "eslint": "^9.34.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-vue": "^10.4.0",
+    "globals": "^16.3.0"
+  }
+}

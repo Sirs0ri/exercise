@@ -1,0 +1,53 @@
+:root {
+  --error: #d73c0c;
+}
+
+[v-cloak] {
+  display: none;
+}
+
+body {
+  width: 300px;
+  margin-block: 0;
+  margin-inline: auto;
+  padding: 1rem;
+}
+
+h1 {
+  margin-top: 0;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+
+  &:has(:invalid) {
+    color: var(--error)
+  }
+
+  input {
+    margin-top: .5rem;
+  }
+
+  input+span {
+    margin-top: .5rem;
+  }
+
+}
+
+input {
+  padding: .5rem;
+  border: 1px solid currentColor;
+  border-radius: .5rem;
+
+  &:invalid {
+    background-color: rgba(255 0 0 / .1);
+    background-color: color-mix(in srgb, var(--error) 10%, transparent);
+  }
+}
